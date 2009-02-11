@@ -31,14 +31,16 @@ private
     if method.to_s =~ TwelveHour
       hour = ($1 == '12') ? 0 : $1.to_i
       hour += 12 if $2 == 'pm'
-      returning self.at_midnight + hour.hours do |result|
-        self.class.send(:define_method, method) { result } # short circuit future method_missing calls
-      end
+      # short circuit future method_missing calls by defining the method on the fly
+      self.class.send(:define_method, method) { self.at_midnight + hour.hours }
+      send(method)
+      
     elsif method.to_s =~ TwentyFourHour
       hour, min = $1.to_i, $2.to_i
-      returning self.at_midnight + hour.hours + min.minutes do |result|
-        self.class.send(:define_method, method) { result } # short circuit future method_missing calls
-      end
+      # short circuit future method_missing calls by defining the method on the fly
+      self.class.send(:define_method, method) { self.at_midnight + hour.hours + min.minutes }
+      send(method)
+      
     else
       method_missing_without_clock_time(method, *args, &block)
     end

@@ -19,6 +19,16 @@ describe 'Time with clock_time' do
       @time = Time.now
     end
     
+    describe "just before midnight" do
+      before do
+        @time = @time.at_midnight - 2.seconds
+      end
+      
+      it "2am today should not be the same as 2am tomorrow" do
+        @time.at_2am.should_not == (@time + 4.seconds).at_2am
+      end
+    end
+    
     it "#at_12am should == time.at_beginning_of_day" do
       @time.at_12am.should == @time.at_beginning_of_day
     end
@@ -78,5 +88,6 @@ describe 'Time with clock_time' do
     it "should not respond to at_0060" do
       @time.should_not respond_to("at_0060")
     end
+    
   end
 end
