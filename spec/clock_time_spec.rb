@@ -65,6 +65,10 @@ describe 'Time with clock_time' do
       @time.at_2120.should == @time.at_beginning_of_day + 21.hours + 20.minutes
     end
     
+    it "#at_2120 should == time.at_beginning_of_day + 21 hours + 20.minutes" do
+      @time.at_2120.should == @time.at_beginning_of_day + 21.hours + 20.minutes
+    end
+
     it "should not respond to at_000" do
       @time.should_not respond_to("at_000")
     end
