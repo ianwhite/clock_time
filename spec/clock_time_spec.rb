@@ -1,6 +1,4 @@
-$LOAD_PATH << File.join(File.dirname(__FILE__), '..', 'lib')
-
-require 'clock_time'
+require File.expand_path(File.join(File.dirname(__FILE__), 'spec_helper'))
 
 describe 'Time with clock_time' do
   before do
