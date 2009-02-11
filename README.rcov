@@ -1,4 +1,4 @@
-= clock_time
+= {ianwhite}[http://github.com/ianwhite] / {clock_time}[http://github.com/ianwhite/clock_time]
 
 Some extensions to Time to allow you to specify times like:
 
@@ -7,3 +7,6 @@ Some extensions to Time to allow you to specify times like:
   Time.tomorrow.at_0430
   Time.yesterday.at_7pm
   
+= Contributors
+
+Author: {Ian White}[http://github.com/ianwhite]
