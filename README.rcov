@@ -1,0 +1,9 @@
+= clock_time
+
+Some extensions to Time to allow you to specify times like:
+
+  Time.now.at_2am
+  Time.now.at_0300
+  Time.tomorrow.at_0430
+  Time.yesterday.at_7pm
+  
