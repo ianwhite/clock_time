@@ -13,4 +13,4 @@ Author: {Ian White}[http://github.com/ianwhite]
 
 Contributions by:
 
-* (Nick Rutherford)[http://github.com/nruth]
+* {Nick Rutherford}[http://github.com/nruth]
