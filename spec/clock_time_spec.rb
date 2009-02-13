@@ -89,5 +89,8 @@ describe 'Time with clock_time' do
       @time.should_not respond_to("at_0060")
     end
     
+    it "should raise NoMethod for at_0060" do
+      lambda{ @time.at_0060 }.should raise_error(NoMethodError)
+    end
   end
 end
